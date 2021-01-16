@@ -1,3 +1,4 @@
+import INITIAL_BOARD_STATE from "../constants"
 import { tActions } from "./actions"
 import { IGameState } from "./context"
 
@@ -5,6 +6,14 @@ export const BoardReducer = (state: IGameState, action: tActions): IGameState =>
   switch (action.type) {
     case 'SET_STATE':
       return { ...state, boardState: action.payload }
+
+    case 'RESET_BOARD':
+      return {
+        ...state,
+        boardState: INITIAL_BOARD_STATE(),
+        remainingMarbles: 32
+      }
+
 
     case 'DROP_MARBLE':
       {

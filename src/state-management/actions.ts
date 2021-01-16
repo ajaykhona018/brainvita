@@ -1,4 +1,4 @@
-import { ICellProps } from './../../models';
+import { ICellProps } from '../models';
 
 interface ISetState {
   readonly type: 'SET_STATE'
@@ -24,8 +24,13 @@ interface IDropMarble {
   }
 }
 
+interface IResetBoard {
+  readonly type: 'RESET_BOARD'
+}
+
 export type tActions =
   | ISetState
   | ISetSelection
   | IDropMarble
   | IResetSelection
+  | IResetBoard

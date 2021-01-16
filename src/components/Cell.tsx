@@ -1,7 +1,7 @@
 import React from 'react'
 import { ICellProps } from '../models'
 import { CellStyled, MarblePlaceHolder, MarbleStyled } from '../styles'
-import { GameContext } from './Board/context'
+import { GameContext } from '../state-management/context'
 
 const Cell = ({ hasMarble, isVisible, rowIndex, columnIndex, allowed }: ICellProps) => {
   const { dispatch } = React.useContext(GameContext)
