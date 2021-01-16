@@ -28,10 +28,9 @@ export const CellStyled = styled.div<ICellStyledProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 0.5px solid #ddd;
+  border: 1px solid green;
   ${({ hide }) => hide && `opacity: 0;`}
   ${({ allowed }) => allowed && `
-    background-color: white;
     border: 1px dashed black;
     ${MarblePlaceHolder} {
       background-color: transparent;
@@ -43,7 +42,8 @@ export const MarblePlaceHolder = styled.div`
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: grey;
+  background-color: darkgreen;
+  box-shadow: inset 1px 1px 10px darkgreen;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,4 +55,5 @@ export const MarbleStyled = styled.div`
   border-radius: 50%;
   background-color: black;
   cursor: pointer;
+  background: radial-gradient(circle at 100px 100px, #5cabff, #000);
 `
