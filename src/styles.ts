@@ -94,7 +94,7 @@ export const SubHeader = styled.div`
 
 export const SideBar = styled.div`
   background-color: #eee;
-  min-width: 300px;
+  width: 25%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -163,10 +163,12 @@ export const FormContainer = styled.form`
   .messages {
     .message-success {
       color: darkgreen;
+      text-align: center;
     }
 
     .message-error {
       color: red;
+      text-align: center;
     }
   }
 `

@@ -6,6 +6,7 @@ const Form = () => {
 
   const { state, dispatch } = useContext(GameContext)
   const [username, setUsername] = React.useState<string>('')
+  const [isUsernameValid, setIsUsernameValid] = React.useState<boolean>(false)
   const [successMessage, setSuccessMessage] = React.useState<string>('')
   const [errorMessage, setErrorMessage] = React.useState<string>('')
   const [loading, setLoading] = React.useState<boolean>(false)
@@ -14,8 +15,10 @@ const Form = () => {
     const regExp = new RegExp(/^[a-z0-9_ ]+$/i)
     if (regExp.test(e.target.value)) {
       setErrorMessage('')
+      setIsUsernameValid(true)
     } else {
       setErrorMessage('Invalid Player name. Player name must be alphanumeric only.')
+      setIsUsernameValid(false)
     }
     setUsername(e.target.value)
   }
@@ -62,7 +65,7 @@ const Form = () => {
       />
     </div>
     <div className='form-actions'>
-      <Button onClick={handleSubmit} disabled={!username || loading} id='submit'>Submit</Button>
+      <Button onClick={handleSubmit} disabled={!username || loading || !isUsernameValid} id='submit'>Submit</Button>
       <Button
         onClick={() => dispatch({ type: 'RESET_BOARD' })}
         disabled={state.remainingMarbles === 32 || loading}
