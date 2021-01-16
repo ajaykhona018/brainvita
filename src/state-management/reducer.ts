@@ -1,4 +1,4 @@
-import INITIAL_BOARD_STATE from "../constants"
+import generateInitialBoardState from "../constants"
 import { tActions } from "./actions"
 import { IGameState } from "./context"
 
@@ -10,7 +10,7 @@ export const BoardReducer = (state: IGameState, action: tActions): IGameState =>
     case 'RESET_BOARD':
       return {
         ...state,
-        boardState: INITIAL_BOARD_STATE(),
+        boardState: generateInitialBoardState(),
         remainingMarbles: 32
       }
 

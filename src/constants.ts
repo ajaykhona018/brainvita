@@ -7,7 +7,7 @@ const isHidden = (rowIndex: number, columnIndex: number): boolean => {
   );
 };
 
-const INITIAL_BOARD_STATE = (): Array<Array<ICellProps>> => {
+const generateInitialBoardState = (): Array<Array<ICellProps>> => {
   const initialState = Array(7)
     .fill([])
     .map((_, rowIndex) => {
@@ -28,4 +28,4 @@ const INITIAL_BOARD_STATE = (): Array<Array<ICellProps>> => {
   initialState[3][3].hasMarble = false;
   return initialState
 }
-export default INITIAL_BOARD_STATE;
+export default generateInitialBoardState;

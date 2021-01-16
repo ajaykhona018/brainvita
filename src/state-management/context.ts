@@ -1,5 +1,5 @@
 import React from "react"
-import INITIAL_BOARD_STATE from "../constants"
+import generateInitialBoardState from "../constants"
 import { ICellProps } from "../models"
 import { tActions } from "./actions"
 
@@ -18,7 +18,7 @@ export interface IGameContext {
 
 export const initialState: IGameContext = {
   state: {
-    boardState: INITIAL_BOARD_STATE(),
+    boardState: generateInitialBoardState(),
     selected: {
       rowIndex: -1,
       columnIndex: -1
